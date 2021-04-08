@@ -37,6 +37,7 @@
 		.scrolling-wrapper {
 			overflow-x : auto;
 		}
+
 	</style>
 </head>
 
@@ -89,21 +90,14 @@
 	<div class="container">
 		<div class="row scrolling-wrapper flex-row flex-nowrap">
 			<div class="col-3" style="border: solid 1px">
-				<button type="button" data-toggle="modal" href="#addPlaylist" class="btn btn-outline-light" style="width: 90%; height: 70%; margin-top: 25px;margin-bottom: 25px; margin-left: : 25px">
-					<img src="<?php echo base_url('assets/img/plus25.png') ?>"><br>Tambah Playlist</button>
+				<div class="create-playlist">
+				<button type="button" data-toggle="modal" href="#addPlaylist" class="btn" style="width: 90%; height: 70%;">
+					<i class="fas fa-plus fa-5x" style="color: white;" ></i>
+					<p style="color: white">Tambah Playlist</p>
+				</button>
+				</div>
 			</div>
-			<div class="col-3" style="border: solid 1px" >
-				<button type="button" class="btn btn-outline-light" style="width: 90%; height: 70%; margin-top: 25px;margin-bottom: 25px; margin-left: : 25px">
-					<img src="<?php echo base_url('assets/img/plus25.png') ?>"></button>
-			</div>
-			<div class="col-3" style="border: solid 1px" >
-				<button type="button" class="btn btn-outline-light" style="width: 90%; height: 70%; margin-top: 25px;margin-bottom: 25px; margin-left: : 25px">
-					<img src="<?php echo base_url('assets/img/plus25.png') ?>"></button>
-			</div>
-			<div class="col-3" style="border: solid 1px" >
-				<button type="button" class="btn btn-outline-light" style="width: 90%; height: 70%; margin-top: 25px;margin-bottom: 25px; margin-left: : 25px">
-					<img src="<?php echo base_url('assets/img/plus25.png') ?>"></button>
-			</div>
+			<!-- List Playlist -->
 			<div class="col-3" style="border: solid 1px" >
 				<button type="button" class="btn btn-outline-light" style="width: 90%; height: 70%; margin-top: 25px;margin-bottom: 25px; margin-left: : 25px">
 					<img src="<?php echo base_url('assets/img/plus25.png') ?>"></button>
@@ -152,14 +146,13 @@
 		  <div class="container-fluid">
 			<div class="row">
 				<div class="col-md-4">
-					<div class="container">
+					<div class="container" style="text-align: center;">
 						<div class="picture-container">
 							<div class="picture">
 								<img src="https://lh3.googleusercontent.com/LfmMVU71g-HKXTCP_QWlDOemmWg4Dn1rJjxeEsZKMNaQprgunDTtEuzmcwUBgupKQVTuP0vczT9bH32ywaF7h68mF-osUSBAeM6MxyhvJhG6HKZMTYjgEv3WkWCfLB7czfODidNQPdja99HMb4qhCY1uFS8X0OQOVGeuhdHy8ln7eyr-6MnkCcy64wl6S_S6ep9j7aJIIopZ9wxk7Iqm-gFjmBtg6KJVkBD0IA6BnS-XlIVpbqL5LYi62elCrbDgiaD6Oe8uluucbYeL1i9kgr4c1b_NBSNe6zFwj7vrju4Zdbax-GPHmiuirf2h86eKdRl7A5h8PXGrCDNIYMID-J7_KuHKqaM-I7W5yI00QDpG9x5q5xOQMgCy1bbu3St1paqt9KHrvNS_SCx-QJgBTOIWW6T0DHVlvV_9YF5UZpN7aV5a79xvN1Gdrc7spvSs82v6gta8AJHCgzNSWQw5QUR8EN_-cTPF6S-vifLa2KtRdRAV7q-CQvhMrbBCaEYY73bQcPZFd9XE7HIbHXwXYA=s200-no" class="picture-src" id="wizardPicturePreview" title="">
 								<input type="file" id="wizard-picture" class="">
 							</div>
 							<h6 class="">Pilih Gambar</h6>
-
 						</div>
 					</div>
 				</div>

@@ -135,7 +135,7 @@ div.content select:focus{
 
 /*Profile Pic Start*/
 .picture-container{
-    margin-left: 30px;
+    
     position: absolute;
     top: 50%;
     -ms-transform: translateY(-50%);
@@ -143,12 +143,12 @@ div.content select:focus{
     cursor: pointer;
 }
 .picture{
-    width: 106px;
-    height: 106px;
+    width: 200px;
+    height: 200px;
     background-color: #999999;
     border: 4px solid #CCCCCC;
     color: #FFFFFF;
-    border-radius: 15%;
+    border-radius: 10%;
     margin: 0px auto;
     overflow: hidden;
     transition: all 0.2s;
@@ -186,3 +186,17 @@ div.content select:focus{
 }
 
 /*Profile Pic End*/
+
+.create-playlist{
+    background-color: transparent;
+    border: solid white 1px;
+    margin: 15px;
+    border-radius: 15px;
+    height: 80%;
+    transition: transform .2s;
+    text-align: center;
+}
+.create-playlist:hover{
+    background-color: rgba(0,0,0,0.2);
+    transform: scale(1.1);
+}
