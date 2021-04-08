@@ -38,13 +38,10 @@ body {
 .playlist-card {
     background-image: linear-gradient(#D2EFF7, #326E90);
     border: solid 1px white;
-    border-radius: 10px;
+    border-radius: 15px;
     width: 90%; 
-    height: 70%; 
-    margin-top: 25px;
-    margin-bottom: 25px; 
-    margin-left: auto;
-    margin-right: auto;
+    height: 80%; 
+    margin: 15px;
     transition: transform .2s;
 }
 
@@ -60,10 +57,11 @@ body {
 }
 
 .playlist-card img {
-    width: 75px;
+    max-width: 75px;
     float: right;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-right: 10px;
+
 }
 
 .sidebar {
@@ -246,7 +244,7 @@ div.content select:focus{
 
 /*Profile Pic End*/
 
-/* .create-playlist{
+ .create-playlist{
     background-color: transparent;
     border: solid white 1px;
     margin: 15px;
@@ -258,4 +256,11 @@ div.content select:focus{
 .create-playlist:hover{
     background-color: rgba(0,0,0,0.2);
     transform: scale(1.1);
-} */
+} 
+.create-playlist p{
+    color: white;
+}
+.create-playlist-btn{
+    width: 90%; 
+    height: 80%;
+}

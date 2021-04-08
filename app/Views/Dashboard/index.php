@@ -26,7 +26,7 @@
 			<div class="col-12" style="border: solid 1px">
 				<nav class="navbar navbar-expand-lg navbar-light ">
 					<div class="container-fluid">
-						<img src="<?php echo base_url('assets/img/image001.png') ?>" style="width: 150px; height: 50px; margin-left: -25px">
+						<a href="<?php echo base_url('public')?>"><img src="<?php echo base_url('assets/img/image001.png') ?>" style="width: 150px; height: 50px; margin-left: -25px"></a>
 						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>
@@ -65,33 +65,29 @@
 		<div class="container">
 			<div class="row scrolling-wrapper flex-row flex-nowrap">
 				<div class="col-3" style="border: solid 1px">
-					<button type="button" data-toggle="modal" href="#addPlaylist" class="btn btn-outline-light" style="width: 90%; height: 70%; margin-top: 25px;margin-bottom: 25px; margin-left: 25px;">
-						<img src="<?php echo base_url('assets/img/plus25.png') ?>"><br>Tambah Playlist</button>
+					<div class="create-playlist">
+						<button type="button" data-toggle="modal" href="#addPlaylist" class="btn">
+							<i class="fas fa-plus fa-5x" style="color: white;" ></i>
+							<p>Tambah Playlist</p>
+						</button>
+					</div>
 				</div>
+	<!-- End Header Menu 1 -->
+	<!-- List Playlist -->
+				<!-- ForEach -->
 				<div class="col-3 playlist-container">
-					<a href="#">
+					<a href="<?php echo base_url('assets/img/gb3.png') ?>">
 						<div class="playlist-card">
 							<h5>Matematika Aljabar</h5>
 							<img src="<?php echo base_url('assets/img/gb3.png') ?>" alt="">
 						</div>
 					</a>
 				</div>
-				<div class="col-3 playlist-container">
-					<button type="button" class="btn btn-outline-light" style="width: 90%; height: 70%; margin-top: 25px;margin-bottom: 25px; margin-left: 25px;">
-						<img src="<?php echo base_url('assets/img/plus25.png') ?>"></button>
-				</div>
-				<div class="col-3 playlist-container">
-					<button type="button" class="btn btn-outline-light" style="width: 90%; height: 70%; margin-top: 25px;margin-bottom: 25px; margin-left: 25px;">
-						<img src="<?php echo base_url('assets/img/plus25.png') ?>"></button>
-				</div>
-				<div class="col-3 playlist-container">
-					<button type="button" class="btn btn-outline-light" style="width: 90%; height: 70%; margin-top: 25px;margin-bottom: 25px; margin-left: 25px;">
-						<img src="<?php echo base_url('assets/img/plus25.png') ?>"></button>
-				</div>
+				<!-- EndForEach -->
 			</div>
 		</div>
 	</div>
-
+	<!-- End List Playlist -->
 	<!-- Body List-->
 	<div class="container card">
 		<div class="row" style="margin-top: 10px">
