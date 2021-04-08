@@ -14,31 +14,6 @@
 	<!-- font -->
 	<link rel="stylesheet" href="https://fonts.google.com/specimen/Poppins?preview.text_type=custom">
 
-	<style>
-		/* height */
-		::-webkit-scrollbar {
-			height: 5px;
-		}
-
-		/* Track */
-		::-webkit-scrollbar-track {
-			background: #326E90;
-		}
-
-		/* Handle */
-		::-webkit-scrollbar-thumb {
-			background: #4694C2;
-		}
-
-		/* Handle on hover */
-		::-webkit-scrollbar-thumb:hover {
-			background: #4694C2;
-		}
-
-		.scrolling-wrapper {
-			overflow-x: auto;
-		}
-	</style>
 </head>
 
 <body>
@@ -93,19 +68,23 @@
 					<button type="button" data-toggle="modal" href="#addPlaylist" class="btn btn-outline-light" style="width: 90%; height: 70%; margin-top: 25px;margin-bottom: 25px; margin-left: 25px;">
 						<img src="<?php echo base_url('assets/img/plus25.png') ?>"><br>Tambah Playlist</button>
 				</div>
-				<div class="col-3" style="border: solid 1px">
+				<div class="col-3 playlist-container">
+					<a href="#">
+						<div class="playlist-card">
+							<h5>Matematika Aljabar</h5>
+							<img src="<?php echo base_url('assets/img/gb3.png') ?>" alt="">
+						</div>
+					</a>
+				</div>
+				<div class="col-3 playlist-container">
 					<button type="button" class="btn btn-outline-light" style="width: 90%; height: 70%; margin-top: 25px;margin-bottom: 25px; margin-left: 25px;">
 						<img src="<?php echo base_url('assets/img/plus25.png') ?>"></button>
 				</div>
-				<div class="col-3" style="border: solid 1px">
+				<div class="col-3 playlist-container">
 					<button type="button" class="btn btn-outline-light" style="width: 90%; height: 70%; margin-top: 25px;margin-bottom: 25px; margin-left: 25px;">
 						<img src="<?php echo base_url('assets/img/plus25.png') ?>"></button>
 				</div>
-				<div class="col-3" style="border: solid 1px">
-					<button type="button" class="btn btn-outline-light" style="width: 90%; height: 70%; margin-top: 25px;margin-bottom: 25px; margin-left: 25px;">
-						<img src="<?php echo base_url('assets/img/plus25.png') ?>"></button>
-				</div>
-				<div class="col-3" style="border: solid 1px">
+				<div class="col-3 playlist-container">
 					<button type="button" class="btn btn-outline-light" style="width: 90%; height: 70%; margin-top: 25px;margin-bottom: 25px; margin-left: 25px;">
 						<img src="<?php echo base_url('assets/img/plus25.png') ?>"></button>
 				</div>

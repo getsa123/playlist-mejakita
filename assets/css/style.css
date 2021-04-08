@@ -7,6 +7,65 @@ body {
     color: white;
 }
 
+/* height */
+.scrolling-wrapper::-webkit-scrollbar {
+    height: 5px;
+}
+
+/* Track */
+.scrolling-wrapper::-webkit-scrollbar-track {
+    background: #326E90;
+}
+
+/* Handle */
+.scrolling-wrapper::-webkit-scrollbar-thumb {
+    background: #4694C2;
+}
+
+/* Handle on hover */
+.scrolling-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #4694C2;
+}
+
+.scrolling-wrapper {
+    overflow-x: auto;
+}
+
+.playlist-container {
+    border: solid 1px;
+}
+
+.playlist-card {
+    background-image: linear-gradient(#D2EFF7, #326E90);
+    border: solid 1px white;
+    border-radius: 10px;
+    width: 90%; 
+    height: 70%; 
+    margin-top: 25px;
+    margin-bottom: 25px; 
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform .2s;
+}
+
+.playlist-card:hover {
+    color: #326e90;
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+.playlist-card h5 {
+    color: #326e90;
+    margin: 5px;
+}
+
+.playlist-card img {
+    width: 75px;
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
 .sidebar {
     margin: 0;
     padding: 0;
@@ -187,7 +246,7 @@ div.content select:focus{
 
 /*Profile Pic End*/
 
-.create-playlist{
+/* .create-playlist{
     background-color: transparent;
     border: solid white 1px;
     margin: 15px;
@@ -199,4 +258,4 @@ div.content select:focus{
 .create-playlist:hover{
     background-color: rgba(0,0,0,0.2);
     transform: scale(1.1);
-}
+} */
