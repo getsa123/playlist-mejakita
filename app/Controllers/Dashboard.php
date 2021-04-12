@@ -12,4 +12,8 @@ class Dashboard extends BaseController
     {
         return view('Dashboard/create-topic');
     }
+    public function playlist()
+    {
+        return view('Dashboard/isi-playlist');
+    }
 }
