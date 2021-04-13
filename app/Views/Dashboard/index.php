@@ -78,7 +78,7 @@
 				<div class="col-3 playlist-container">
 					<a href="<?php echo base_url('assets/img/gb3.png') ?>">
 						<div class="playlist-card">
-							<h5><?= $playlist['title'] ?></h5>
+							<h5><?= $playlist['playlist_title'] ?></h5>
 							<img src="<?php echo base_url('assets/img/gb3.png') ?>" alt="">
 						</div>
 					</a>
@@ -105,8 +105,8 @@
         <img class="listImages" src="<?php echo base_url('assets/img/gb3.png') ?>" style="width: 50px; height: 50px; border-radius: 15px">
     </td>
     <td>
-        <strong><?= $playlist['title'] ?></strong><br>
-        <small class="text-muted"><?= $playlist['author'] ?></small>
+        <strong><?= $playlist['playlist_title'] ?></strong><br>
+        <small class="text-muted"><?= $playlist['playlist_author'] ?></small>
     </td>
     <td>
         <a href="#" style="text-decoration: none; color: black; text-align: right; font-size: 18px;" >+ Tambah ke Playlist</a>
