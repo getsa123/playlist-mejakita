@@ -6,14 +6,36 @@ class Dashboard extends BaseController
 {
     public function index()
     {
-        return view('Dashboard/index');
+        $data['playlist_data'] = [
+			[
+				'title' => 'Matematika Unik',
+				'author' => 'MDI 009',
+                'image' => 'assets/img/gb3.png'
+			],
+			[
+				'title' => 'Fisika Kreatif',
+				'author' => 'MDI 009',
+                'image' => 'assets/img/gb3.png'
+			],
+            [
+				'title' => 'Kelompok 5',
+				'author' => 'MDI 009',
+                'image' => 'assets/img/gb3.png'
+			],
+			[
+				'title' => 'Biologi Menyenangkan',
+				'author' => 'MDI 009',
+                'image' => 'assets/img/gb3.png'
+			]
+		];
+        echo view('Dashboard/index', $data);
     }
     public function create_topic()
     {
-        return view('Dashboard/create-topic');
+        echo view('Dashboard/create-topic');
     }
     public function playlist()
     {
-        return view('Dashboard/isi-playlist');
+        echo view('Dashboard/isi-playlist');
     }
 }

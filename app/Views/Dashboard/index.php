@@ -89,24 +89,33 @@
 	</div>
 	<!-- End List Playlist -->
 	<!-- Body List-->
-	<div class="container card">
-		<div class="row" style="margin-top: 10px">
-			<div class="col-1">
-				<img class="listImages" src="<?php echo base_url('assets/img/gb3.png') ?>" style="width: 50px; height: 50px; border-radius: 15px">
-			</div>
-			<div class="col-8" style="border: solid 1px">
-				<a href="#" style="text-decoration: none; color: black; font-size: 24px">Matematika Aljabar</a>
-				<br>
-				<div style="margin-top: -10px;">
-					<a href="#" style="font-size: 9px; text-decoration: none; color: black">MDI009</a>
-				</div>
-			</div>
-			<div class="col-3" style="border: solid 1px; text-align: center;">
-				<a href="#" style="text-decoration: none; color: black; text-align: right; font-size: 18px;">+ Tambah ke Playlist</a>
-			</div>
-		</div>
-	</div>
-
+	<div class="container">
+	<table class="table">
+<thead>
+<tr>
+    <th></th>
+    <th>Title</th>
+    <th>Action</th>
+</tr>
+</thead>
+<tbody>
+<?php foreach($playlist_data as $playlist): ?>
+<tr>
+    <td>
+        <img class="listImages" src="<?php echo base_url('assets/img/gb3.png') ?>" style="width: 50px; height: 50px; border-radius: 15px">
+    </td>
+    <td style="margin-left: 10px">
+        <strong><?= $playlist['title'] ?></strong><br>
+        <small class="text-muted"><?= $playlist['author'] ?></small>
+    </td>
+    <td>
+        <a href="#" style="text-decoration: none; color: black; text-align: right; font-size: 18px;" >+ Tambah ke Playlist</a>
+    </td>
+</tr>
+<?php endforeach ?>
+</tbody>
+</table>
+</div>
 
 
 
