@@ -2,7 +2,7 @@ body {
     font-family: Poppins;
 }
 
-.create-playlist {
+.modal-form {
     background-color: #326e90;
     color: white;
 }
@@ -263,4 +263,29 @@ div.content select:focus{
 .create-playlist-btn{
     width: 90%; 
     height: 80%;
+}
+
+.dropdown-toggle {
+    background-color: #326e90;
+    color: white;
+}
+
+.dropdown-toggle:focus {
+    background-color: #2ca8ff;
+    color: white;
+}
+
+.dropdown-toggle:hover {
+    background-color: #2ca8ff;
+    color: white;
+}
+
+.dropdown-menu {
+    background-color: #326e90;
+    color: white;
+}
+
+.dropdown-item {
+    background-color: #326e90;
+    color: white;
 }

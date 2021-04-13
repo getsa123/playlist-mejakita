@@ -106,7 +106,7 @@
 							<p style="color: white;">7 Materi</p>
 						</div>
 						<div class="col-4" style="border: solid 1px">
-							<p>DD.MM.YYYY hh:mm <?php echo date('j/m/Y H:i'); ?></p>
+							<p><?php echo date('j/m/Y H:i'); ?></p>
 						</div>
 					</div>
 				</div>
