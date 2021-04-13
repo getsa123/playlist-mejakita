@@ -93,7 +93,7 @@
 			<div class="row" style="border: solid 1px">
 
 				<div class="col-3" style="padding:30px" align="center">
-				​	<div style="margin-top:">
+				​	<div style="border: 1px">
 					<img src="<?php echo base_url('assets/img/gb3.png') ?>" class="img-fluid" width="200px" height="200px" alt="...">
 					</div>
 				</div>
