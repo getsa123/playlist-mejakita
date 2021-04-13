@@ -54,10 +54,9 @@
     <div class="sidebar">
         <label for="list-header">Playlistku</label>
         <h3 id="list-header">MATEMATIKA ALJABAR</h5>
-        <div>Vektor, analisis dan perhitungannya</div>
-        <div>Bangun ruang dan perhitungannya</div>
-        <div>Listrik Statis</div>
-        <div>Gaya dan Pesawat Sederhana</div>
+        <?php foreach($playlist_data as $playlist): ?>
+        <div><?= $playlist['title'] ?></div>
+        <?php endforeach ?>
     </div>
 
     <!-- content -->
