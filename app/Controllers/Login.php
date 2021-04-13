@@ -28,7 +28,7 @@ class Login extends Controller
                     'logged_in'     => TRUE
                 ];
                 $session->set($ses_data);
-                return redirect()->to('/dashboard');
+                return redirect()->to('Dashboard/index');
             }else{
                 $session->setFlashdata('msg', 'Wrong Password');
                 return redirect()->to('/login');

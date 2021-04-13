@@ -113,7 +113,11 @@
 						</div>
 
 						<div class="col-4" style="border: solid 1px">
+<<<<<<< HEAD
 							<p><?= $playlist_data['playlist_created_time']?></p>
+=======
+							<p><?php echo date('j/m/Y H:i'); ?></p>
+>>>>>>> c47ba36a09a867b2746ee7a2207aed44640fdd44
 						</div>
 					</div>
 

@@ -21,9 +21,6 @@
             <input type="password" name="password" class="form-control" />  
             <br />  
             <input type="submit" name="login" value="Login" class="btn btn-info" />  
-            <br />  
-            <p align="center">Don't have account? <a href="register.php">Register</a></p>
-            <p align="center"><a href="forget.php">Forget Password?</a></p>  
         </form>
     </div> 
 </body>

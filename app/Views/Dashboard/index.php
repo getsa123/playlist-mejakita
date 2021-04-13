@@ -110,7 +110,16 @@
         <small class="text-muted"><?= $playlist['playlist_author'] ?></small>
     </td>
     <td>
-        <a href="#" style="text-decoration: none; color: black; text-align: right; font-size: 18px;" >+ Tambah ke Playlist</a>
+		<div class="dropdown">
+			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Dropdown button
+			</button>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<?php foreach($playlist_data as $playlist): ?>
+					<a href="#" class="dropdown-item" action=""><?= $playlist['playlist_title'] ?></a>
+				<?php endforeach ?>
+			</div>
+		</div>
     </td>
 </tr>
 <?php endforeach ?>
@@ -126,9 +135,77 @@
 	<!-- Modals -->
 	<div class="modal fade" id="addPlaylist" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
-			<div class="modal-content create-playlist">
+			<div class="modal-content modal-form">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">Tambah Playlist</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="container">
+										<div class="picture-container">
+											<div class="picture">
+												<img src="https://lh3.googleusercontent.com/LfmMVU71g-HKXTCP_QWlDOemmWg4Dn1rJjxeEsZKMNaQprgunDTtEuzmcwUBgupKQVTuP0vczT9bH32ywaF7h68mF-osUSBAeM6MxyhvJhG6HKZMTYjgEv3WkWCfLB7czfODidNQPdja99HMb4qhCY1uFS8X0OQOVGeuhdHy8ln7eyr-6MnkCcy64wl6S_S6ep9j7aJIIopZ9wxk7Iqm-gFjmBtg6KJVkBD0IA6BnS-XlIVpbqL5LYi62elCrbDgiaD6Oe8uluucbYeL1i9kgr4c1b_NBSNe6zFwj7vrju4Zdbax-GPHmiuirf2h86eKdRl7A5h8PXGrCDNIYMID-J7_KuHKqaM-I7W5yI00QDpG9x5q5xOQMgCy1bbu3St1paqt9KHrvNS_SCx-QJgBTOIWW6T0DHVlvV_9YF5UZpN7aV5a79xvN1Gdrc7spvSs82v6gta8AJHCgzNSWQw5QUR8EN_-cTPF6S-vifLa2KtRdRAV7q-CQvhMrbBCaEYY73bQcPZFd9XE7HIbHXwXYA=s200-no" class="picture-src" id="wizardPicturePreview" title="">
+												<input type="file" id="wizard-picture" class="">
+											</div>
+											<h6 class="">Pilih Gambar</h6>
+
+										</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<label for="playlist-title" class="col-form-label">Judul</label>
+												<input type="text" class="form-control" id="playlist-title">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<label for="playlist-category" class="col-form-label">Kategori</label>
+												<select class="form-control" id="playlist-category">
+													<option>Sosiologi</option>
+													<option>Kimia</option>
+													<option>Fisika</option>
+													<option>Matematika</option>
+													<option>Biologi</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<label for="playlist-description">Deskripsi</label>
+												<textarea class="form-control" id="playlist-description" rows="3"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary">Tambah Playlist</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="addToPlaylist" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content modal-form">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Tambah Ke Playlist</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
