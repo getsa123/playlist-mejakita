@@ -74,16 +74,16 @@
 				</div>
 	<!-- End Header Menu 1 -->
 	<!-- List Playlist -->
-				<!-- ForEach -->
+				<?php foreach($playlist_data as $playlist): ?>
 				<div class="col-3 playlist-container">
 					<a href="<?php echo base_url('assets/img/gb3.png') ?>">
 						<div class="playlist-card">
-							<h5>Matematika Aljabar</h5>
+							<h5><?= $playlist['title'] ?></h5>
 							<img src="<?php echo base_url('assets/img/gb3.png') ?>" alt="">
 						</div>
 					</a>
 				</div>
-				<!-- EndForEach -->
+				<?php endforeach ?>
 			</div>
 		</div>
 	</div>
@@ -104,7 +104,7 @@
     <td>
         <img class="listImages" src="<?php echo base_url('assets/img/gb3.png') ?>" style="width: 50px; height: 50px; border-radius: 15px">
     </td>
-    <td style="margin-left: 10px">
+    <td>
         <strong><?= $playlist['title'] ?></strong><br>
         <small class="text-muted"><?= $playlist['author'] ?></small>
     </td>
