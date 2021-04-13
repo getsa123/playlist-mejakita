@@ -88,6 +88,7 @@
 		</div>
 	</div>
 	<!-- End List Playlist -->
+
 	<!-- Body List-->
 	<div class="container">
 	<table class="table">

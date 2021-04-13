@@ -43,6 +43,9 @@ class Dashboard extends BaseController
     }
     public function playlist()
     {
-        echo view('Dashboard/isi-playlist');
+        $playlist = new DashboardModel();
+        $data['playlist_data'] = $playlist->first();
+        
+        echo view('Dashboard/isi-playlist', $data);
     }
 }

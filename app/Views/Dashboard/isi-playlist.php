@@ -89,26 +89,34 @@
 	<!-- Header Menu 1 -->
 	<div style="background-color: #326e90; overflow: hidden">
 		<div class="container">
+			
 			<div class="row" style="border: solid 1px">
+
 				<div class="col-3" style="padding:30px" align="center">
-				​	<img src="<?php echo base_url('assets/img/gb3.png.png') ?>" class="img-fluid" width="200px" height="200px" alt="...">
-					
+				​	<div style="margin-top:">
+					<img src="<?php echo base_url('assets/img/gb3.png') ?>" class="img-fluid" width="200px" height="200px" alt="...">
+					</div>
 				</div>
+
 				<div class="col-6" style="border: solid 1px">
-					<p style="color: white;">Playlistku</p>
 					<h3 style="color: white;">MATEMATIKA ALJABAR</h3>
-					<p style="color: white;">Playlist Matematika andalanku, berisi materi aljabar lengkap dari youtube dan video pembelajaran MejaKita</p>
-					<div class="row">
-						<div class="col-4" style="border: solid 1px">
-							<p style="color: white;">MDI009</p>
+					<p style="color: white;"><?= $playlist_data['playlist_description'] ?></p>
+					
+					<div style="bottom:0px; position:absolute; border: solid 1px; color: white;" class="row container-fluid">
+
+						<div class="col-4" style="border: solid 1px; vertical-align: bottom; ">
+							<p><?= $playlist_data['playlist_author'] ?></p>
 						</div>
+
 						<div class="col-4" style="border: solid 1px">
-							<p style="color: white;">7 Materi</p>
+							<p>7 Materi</p>
 						</div>
+
 						<div class="col-4" style="border: solid 1px">
-							<p>DD.MM.YYYY hh:mm <?php echo date('j/m/Y H:i'); ?></p>
+							<p><?= $playlist_data['playlist_created_time']?></p>
 						</div>
 					</div>
+
 				</div>
 			</div>	
 		</div>
