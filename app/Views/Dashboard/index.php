@@ -76,10 +76,10 @@
 	<!-- List Playlist -->
 				<?php foreach($playlist_data as $playlist): ?>
 				<div class="col-3 playlist-container">
-					<a href="<?php echo base_url('assets/img/gb3.png') ?>">
+					<a href="<?= base_url('public/dashboard/playlist/'.$playlist['playlist_id'].'/playlist_edit') ?>">
 						<div class="playlist-card">
 							<h5><?= $playlist['playlist_title'] ?></h5>
-							<img src="<?= $playlist['playlist_content'] ?>" alt="">
+							<img src="<?php echo base_url('assets/img/gb3.png') ?>" alt="">
 						</div>
 					</a>
 				</div>

@@ -99,7 +99,7 @@
 				</div>
 
 				<div class="col-6" style="border: solid 1px">
-					<h3 style="color: white;">MATEMATIKA ALJABAR</h3>
+					<h3 style="color: white;"><?= $playlist_data['playlist_title'] ?></h3>
 					<p style="color: white;"><?= $playlist_data['playlist_description'] ?></p>
 					
 					<div style="bottom:0px; position:absolute; border: solid 1px; color: white;" class="row container-fluid">
@@ -123,31 +123,29 @@
 	</div>
 
 	<!-- Body List-->
-	<div class="container card">
-		<div class="row" style="margin-top: 20px ;background-color: rgba(196, 196, 196, 0.26);">
-			<div class="col-1">
-				<img class="listImages" src="<?php echo base_url('assets/img/gb3.png.png') ?>" style="width: 50px; height: 50px; border-radius: 15px">
-			</div>
-			<div class="col-8" style="border: solid 1px">
-				<a href="#" style="text-decoration: none; color: black; font-size: 24px">Vektor, analisis dan perhitungannya</a>
-				<br>
-				<div style="margin-top: -10px;">
-					<a href="#" style="font-size: 9px; text-decoration: none; color: black">MDI009</a>
-				</div>
-			</div>
-			<div class="col-3" style="border: solid 1px;">
-				<div class="btn-group" role="group" aria-label="">
-	  				<button type="button" class="btn btn-primary">
-	  					<i class="fa fa-pencil" aria-hidden="true"></i>
-	  				</button>
-  					<button type="button" class="btn btn-danger">
-  						<i class="fa fa-trash" aria-hidden="true"></i>
-  					</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
+	<div class="container">
+	<table class="table">
+<thead>
+<tr>
+    <th></th>
+    <th>Title</th>
+</tr>
+</thead>
+<tbody>
+<?php foreach($content_data as $content): ?>
+<tr>
+    <td>
+        <img class="listImages" src="<?php echo base_url('assets/img/gb3.png') ?>" style="width: 50px; height: 50px; border-radius: 15px">
+    </td>
+    <td>
+        <strong><?= $content['content_title'] ?></strong><br>
+        
+    </td>
+</tr>
+<?php endforeach ?>
+</tbody>
+</table>
+</div>
 
 
 

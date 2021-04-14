@@ -10,9 +10,12 @@ class Dashboard extends BaseController
 {
     public function index()
     {
+        //Read Mode
         $playlist = new DashboardModel();
         $data['playlist_data'] = $playlist->findAll();
         
+        //Create Mode
+
          // lakukan validasi
          $validation =  \Config\Services::validation();
          $validation->setRules([
@@ -109,15 +112,41 @@ class Dashboard extends BaseController
         $this->load->views('public/Dashboard');
     }
 
-    public function playlist()
+    public function playlist_edit($playlist_id)
     {
         $playlist = new DashboardModel();
         $data['playlist_data'] = $playlist->first();
+
+        // Update Mode
+
+         // ambil artikel yang akan diedit
+         $playlist = new DashboardModel();
+         $data['playlist_data'] = $playlist-> where('playlist_id', $playlist_id)->first();
+         
+         // lakukan validasi data artikel
+         $validation =  \Config\Services::validation();
+         $validation->setRules([
+             'playlist_id' => 'required',
+             'playlist_title' => 'required'
+         ]);
+         $isDataValid = $validation->withRequest($this->request)->run();
+         // jika data vlid, maka simpan ke database
+         if($isDataValid){
+             $playlist->update($playlist_id, [
+                 "playlist_title" => $this->request->getPost('playlist_title'),
+                 "playlist_content" => $this->request->getPost('playlist_content'),
+                 "playlist_status" => $this->request->getPost('playlist_status')
+             ]);
+             return redirect()->to(base_url('public/'));
+         }
+
+         $content = new ContentModel();
+        $data['content_data'] = $content->findAll();
         
         echo view('Dashboard/isi-playlist', $data);
     }
 
-    public function delete($playlist_id){
+    public function playlist_delete($playlist_id){
         $playlist = new DashboardModel();
         $playlist->delete($playlist_id);
         return redirect()->to(base_url('public/'));

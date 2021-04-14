@@ -32,8 +32,16 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Dashboard::index');
+// $routes->get('/', 'Dashboard::index');
 
+// $routes->add('/dashboard/(:segment)/edit_playlist', 'Dashboard::edit_playlist/$1');
+// $routes->get('/dashboard/(:segment)/delete', 'Dashboard::delete/$1');
+
+$routes->group('dashboard', function($routes){
+	$routes->get('playlist', 'Dashboard::index');
+	$routes->add('playlist/(:segment)/playlist_edit', 'Dashboard::playlist_edit/$1');
+	$routes->get('playlist/(:segment)/playlist_delete', 'Dashboard::playlist_delete/$1');
+});
 
 
 /*
