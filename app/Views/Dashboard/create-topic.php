@@ -62,11 +62,16 @@
     <!-- content -->
     <div class="content">
         <div class="container topic-form">
-            <form action="#" method="post">
+        <?php $validation = \Config\Services::validation(); ?>
+            <form action="" method="post" enctype="multipart/form-data">
                 <h3>TAMBAH MATERI</h5>
                 <div class="form-group">
 					<label for="topic-title" class="col-form-label">Judul Materi</label>
-					<input type="text" class="form-control" id="topic-title" name="content_title" required>
+					<input type="text" class="form-control <?= ($validation->hasError('content_title')) ?
+                    'is-invalid' : ''; ?>" id="topic-title" name="content_title" required>
+                    <div class="invalid-feedback">
+                        <?= $validation->getError('content_title')?>
+                    </div>
 				</div>
                 <div class="form-group">
                     <label for="topic-category">Kategori</label>
@@ -81,7 +86,11 @@
                     <input type="text" class="form-control" name="content_link" id="topic-link" >
                 </div>
                 <div class="form-group files" id="file-field">
-                    <input type="file" class="form-control" name="content_link" multiple="" id="topic-file">
+                    <label for="topic-file">Masukkan File</label>
+                    <input type="file" class="form-control <?= ($validation->hasError('content_file'))? 'is-invalid' : ''; ?>" name="content_file" multiple="" id="topic-file">
+                    <div class="invalid-feedback">
+                        <?= $validation->getError('content_file')?>
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-success">Tambah Materi</button>
             </form>

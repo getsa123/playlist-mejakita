@@ -79,7 +79,7 @@
 					<a href="<?php echo base_url('assets/img/gb3.png') ?>">
 						<div class="playlist-card">
 							<h5><?= $playlist['playlist_title'] ?></h5>
-							<img src="<?php echo base_url('assets/img/gb3.png') ?>" alt="">
+							<img src="<?= $playlist['playlist_content'] ?>" alt="">
 						</div>
 					</a>
 				</div>
