@@ -4,6 +4,7 @@
 namespace App\Controllers;
 
 use \App\Models\DashboardModel;
+use \App\Models\ContentModel;
 
 class Dashboard extends BaseController
 {
@@ -31,30 +32,26 @@ class Dashboard extends BaseController
         echo view('Dashboard/index', $data);
     }
     
-    public function create_topic()
+    public function create_content()
     {
-        $data['playlist_data'] = [
-			[
-				'title' => 'Matematika Unik',
-				'author' => 'MDI 009',
-                'image' => 'assets/img/gb3.png'
-			],
-			[
-				'title' => 'Fisika Kreatif',
-				'author' => 'MDI 009',
-                'image' => 'assets/img/gb3.png'
-			],
-            [
-				'title' => 'Kelompok 5',
-				'author' => 'MDI 009',
-                'image' => 'assets/img/gb3.png'
-			],
-			[
-				'title' => 'Biologi Menyenangkan',
-				'author' => 'MDI 009',
-                'image' => 'assets/img/gb3.png'
-			]
-		];
+        $content = new ContentModel();
+        $data['content_data'] = $content->findAll();
+
+        // lakukan validasi
+        $validation =  \Config\Services::validation();
+        $validation->setRules(['content_title' => 'required']);
+        $isDataValid = $validation->withRequest($this->request)->run();
+
+        // jika data valid, simpan ke database
+        if($isDataValid){
+            $content = new ContentModel();
+            $content->insert([
+                "content_title" => $this->request->getPost('content_title'),
+                "content_category" => $this->request->getPost('content_category'),
+                "content_link" => $this->request->getPost('content_link'),
+            ]);
+            return redirect()->to(base_url('public/dashboard/create_content'));
+        }
 
         echo view('Dashboard/create-topic', $data);
     }

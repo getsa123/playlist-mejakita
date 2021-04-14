@@ -54,8 +54,8 @@
     <div class="sidebar">
         <label for="list-header">Playlistku</label>
         <h3 id="list-header">MATEMATIKA ALJABAR</h5>
-        <?php foreach($playlist_data as $playlist): ?>
-        <div><?= $playlist['title'] ?></div>
+        <?php foreach($content_data as $content): ?>
+        <div><?= $content['content_title'] ?></div>
         <?php endforeach ?>
     </div>
 
@@ -66,11 +66,11 @@
                 <h3>TAMBAH MATERI</h5>
                 <div class="form-group">
 					<label for="topic-title" class="col-form-label">Judul Materi</label>
-					<input type="text" class="form-control" id="topic-title" required>
+					<input type="text" class="form-control" id="topic-title" name="content_title" required>
 				</div>
                 <div class="form-group">
                     <label for="topic-category">Kategori</label>
-                    <select class="form-control" id="topic-category">
+                    <select class="form-control" id="topic-category" name="content_category">
                         <option value="youtube">Youtube</option>
                         <option value="pdf">File PDF</option>
                         <option value="web">Link Web</option>
@@ -78,10 +78,10 @@
                 </div>
                 <div class="form-group" id="link-field">
                     <label for="topic-link">Masukkan Link</label>
-                    <input type="text" class="form-control" name="" id="topic-link">
+                    <input type="text" class="form-control" name="content_link" id="topic-link" >
                 </div>
                 <div class="form-group files" id="file-field">
-                    <input type="file" class="form-control" multiple="" id="topic-file">
+                    <input type="file" class="form-control" name="content_link" multiple="" id="topic-file">
                 </div>
                 <button type="submit" class="btn btn-success">Tambah Materi</button>
             </form>
