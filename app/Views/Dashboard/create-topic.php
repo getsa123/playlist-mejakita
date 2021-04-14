@@ -62,7 +62,7 @@
     <!-- content -->
     <div class="content">
         <div class="container topic-form">
-            <form action="#">
+            <form action="#" method="post">
                 <h3>TAMBAH MATERI</h5>
                 <div class="form-group">
 					<label for="topic-title" class="col-form-label">Judul Materi</label>
