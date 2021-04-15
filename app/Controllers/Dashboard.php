@@ -44,60 +44,59 @@ class Dashboard extends BaseController
     
     public function create_content()
     {
+        session();
         $content = new ContentModel();
-        // $slug = url_title($this->request->getVar('content_title'), '-', true);
         $data['content_data'] = $content->findAll();
-        helper(['form']);
-
-        // lakukan validasi
-        $validation =  \Config\Services::validation();
-        $validation->setRules(
-            [
-                'content_title' => 'required|is_unique[content.content_title]',
-                'content_file' => 'mime_in[content_file,application/pdf]|ext_in[content_file,pdf]'
-            ],
-            [ //errors
-                'content_title' => [
-                    'required' => 'Judul harus diisi',
-                    'is_unique' => 'Judul sudah digunakan!'
-                ],
-                'content_file' => [
-                    'mime_in' => 'format file harus pdf',
-                    'ext_in' => 'format file harus pdf'
-                ]
-            ]
-        );
-        $isDataValid = $validation->withRequest($this->request)->run();
-
-        // jika data valid, simpan ke database
-        if($isDataValid){
-            $content = new ContentModel();
-            if($this->request->getPost('content_link') != null) 
-            {
-                $content->insert([
-                    "content_title" => $this->request->getPost('content_title'),
-                    "content_category" => $this->request->getPost('content_category'),
-                    "content_link" => $this->request->getPost('content_link'),
-                    // "slug" => $slug
-                ]);
-            }
-            else
-            {
-                $fileContent = $this->request->getFile('content_file');
-                $fileContent->move('pdf');
-                $fileName = $fileContent->getName();
-                $content->insert([
-                    "content_title" => $this->request->getPost('content_title'),
-                    "content_category" => $this->request->getPost('content_category'),
-                    "content_link" => $fileName,
-                    // "slug" => $slug
-                ]);
-            }
-
-            return redirect()->to(base_url('public/dashboard/create_content'));
-        }
-
         echo view('Dashboard/create-topic', $data);
+    }
+
+    public function save_content() {
+        if (!$this->validate([
+            'content_title' => [
+                'rules' => 'required|is_unique[content.content_title]',
+                'errors' => [
+                    'required' => 'Judul harus diisi.',
+                    'is_unique' => 'Judul sudah ada.'
+                ]
+            ],
+            'content_file' => 'mime_in[content_file,application/pdf]|ext_in[content_file,pdf]'
+        ])) {
+            $validation =  \Config\Services::validation();
+            return redirect()->to(base_url('public/dashboard/create_content'))->withInput();
+        }
+        $content = new ContentModel();
+        function getRandomString() {
+            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $string = '';
+        
+            for ($i = 0; $i < 10; $i++) {
+                $string .= $characters[mt_rand(0, strlen($characters) - 1)];
+            }
+        
+            return $string;
+        }
+        if($this->request->getPost('content_link') != null) 
+        {
+            $content->insert([
+                "content_title" => $this->request->getPost('content_title'),
+                "content_category" => $this->request->getPost('content_category'),
+                "content_link" => $this->request->getPost('content_link'),
+                // "slug" => $slug
+            ]);
+        }
+        else
+        {
+            $fileContent = $this->request->getFile('content_file');
+            $fileName = getRandomString().".pdf";
+            $fileContent->move('pdf',$fileName);
+            $content->insert([
+                "content_title" => $this->request->getPost('content_title'),
+                "content_category" => $this->request->getPost('content_category'),
+                "content_link" => $fileName,
+                // "slug" => $slug
+            ]);
+        }
+        return redirect()->to(base_url('public/dashboard/create_content'));
     }
 
     public function create_playlist()

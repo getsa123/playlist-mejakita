@@ -37,12 +37,12 @@
     <div class="content">
         <div class="container topic-form">
         <?php $validation = \Config\Services::validation(); ?>
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="save_content" method="post" enctype="multipart/form-data">
                 <h3>TAMBAH MATERI</h5>
                 <div class="form-group">
 					<label for="topic-title" class="col-form-label">Judul Materi</label>
 					<input type="text" class="form-control <?= ($validation->hasError('content_title')) ?
-                    'is-invalid' : ''; ?>" id="topic-title" name="content_title" required>
+                    'is-invalid' : ''; ?>" id="topic-title" name="content_title" required value="<?= old('content_title');?>">
                     <div class="invalid-feedback">
                         <?= $validation->getError('content_title')?>
                     </div>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="form-group" id="link-field">
                     <label for="topic-link">Masukkan Link</label>
-                    <input type="text" class="form-control" name="content_link" id="topic-link" >
+                    <input type="text" class="form-control" name="content_link" id="topic-link" value="<?= old('content_link');?>">
                 </div>
                 <div class="form-group files" id="file-field">
                     <label for="topic-file">Masukkan File</label>
