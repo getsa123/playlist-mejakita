@@ -150,4 +150,10 @@ class Dashboard extends BaseController
         $playlist->delete($playlist_id);
         return redirect()->to(base_url('public/'));
     }
+
+    public function content_delete($content_id){
+        $content = new ContentModel();
+        $content->delete($content_id);
+        return redirect()->to(base_url('public/dashboard'));
+    }
 }
