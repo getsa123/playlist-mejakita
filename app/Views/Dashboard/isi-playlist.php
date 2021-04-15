@@ -90,7 +90,7 @@
 <div class="row">
 	<div class="col-3">
 	<button type="button" class="btn btn-success" style="margin-left: 60px; margin-top:20px">
-		<a href="<?= base_url('public/dashboard/playlist/create_content') ?>" style="text-decoration: none; color: white;">Tambah Playlist</a>
+		<a href="<?= base_url('public/dashboard/create_content') ?>" style="text-decoration: none; color: white;">Tambah Playlist</a>
 	</button>
 	</div>
 		<div class="col-6">

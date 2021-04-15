@@ -40,6 +40,7 @@ $routes->setAutoRoute(true);
 $routes->group('dashboard', function($routes){
 	$routes->get('playlist', 'Dashboard::index');
 	$routes->get('playlist/create_content', 'Dashboard::create_content');
+	$routes->get('playlist/save_content', 'Dashboard::save_content');
 	$routes->add('playlist/(:segment)/playlist_edit', 'Dashboard::playlist_edit/$1');
 	$routes->get('playlist/(:segment)/playlist_delete', 'Dashboard::playlist_delete/$1');
 	$routes->get('content_list/(:segment)/content_delete', 'Dashboard::content_delete/$1');
