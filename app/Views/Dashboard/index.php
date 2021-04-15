@@ -20,51 +20,17 @@
 	<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/popper.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/bootstrap.bundle.min.js') ?>"></script>
-	<!-- Navbar -->
-	<div class="container">
-		<div class="row">
-			<div class="col-12" style="border: solid 1px">
-				<nav class="navbar navbar-expand-lg navbar-light ">
-					<div class="container-fluid">
-						<a href="<?php echo base_url('public')?>"><img src="<?php echo base_url('assets/img/image001.png') ?>" style="width: 150px; height: 50px; margin-left: -25px"></a>
-						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button>
-						<div class="collapse navbar-collapse" id="navbarNavDropdown">
-							<ul class="navbar-nav">
-								<li class="nav-item">
-									<a class="nav-link" href="#">Home</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Features</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Pricing</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</nav>
-			</div>
-		</div>
-	</div>
+	
+	<?= $this->include('navbar') ?>
+	<?= $this->include('header') ?>
 
-	<!-- Header -->
-	<div style="background-color: #40799a; overflow: hidden">
-		<div class="container">
-			<div class="row row-4" style="border: solid 1px">
-				<div class="col-6" style="border: solid 1px">
-					<h2 style="color: white;">PLAYLIST</h2>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 
 	<!-- Header Menu 1 -->
 	<div style="background-color: #326e90; overflow: hidden">
 		<div class="container">
 			<div class="row scrolling-wrapper flex-row flex-nowrap">
-				<div class="col-3" style="border: solid 1px">
+				<div class="col-3">
 					<div class="create-playlist">
 						<button type="button" data-toggle="modal" href="#addPlaylist" class="btn">
 							<i class="fas fa-plus fa-5x" style="color: white;" ></i>
@@ -75,7 +41,7 @@
 	<!-- End Header Menu 1 -->
 	<!-- List Playlist -->
 				<?php foreach($playlist_data as $playlist): ?>
-				<div class="col-3 playlist-container">
+				<div class="col-3">
 					<a href="<?= base_url('public/dashboard/playlist/'.$playlist['playlist_id'].'/playlist_edit') ?>">
 						<div class="playlist-card">
 							<h5><?= $playlist['playlist_title'] ?></h5>

@@ -45,74 +45,37 @@
 	<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/popper.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/bootstrap.bundle.min.js') ?>"></script>
-	<!-- Navbar -->
-	<div class="container">
-		<div class="row">
-			<div class="col-12" style="border: solid 1px">
-				<nav class="navbar navbar-expand-lg navbar-light ">
-					<div class="container-fluid">
-						<img src="<?php echo base_url('assets/img/image001.png') ?>" style="width: 150px; height: 50px; margin-left: -25px">
-						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button>
-						<div class="collapse navbar-collapse" id="navbarNavDropdown">
-							<ul class="navbar-nav">
-								<li class="nav-item">
-									<a class="nav-link" href="#">Home</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Features</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Pricing</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</nav>
-			</div>
-		</div>
-	</div>
-
-
-	<!-- Header -->
-	<div style="background-color: #40799a; overflow: hidden">
-		<div class="container">
-			<div class="row row-4" style="border: solid 1px">
-				<div class="col-6">
-					<h2 style="color: white;">PLAYLIST</h2>
-				</div>
-			</div>
-		</div>
-	</div>
+	
+	<?= $this->include('navbar') ?>
+	<?= $this->include('header') ?>
 
 	<!-- Header Menu 1 -->
 	<div style="background-color: #326e90; overflow: hidden">
 		<div class="container">
 			
-			<div class="row" style="border: solid 1px">
+			<div class="row">
 
 				<div class="col-3" style="padding:30px" align="center">
-				​	<div style="border: 1px">
+				​	<div >
 					<img src="<?php echo base_url('assets/img/gb3.png') ?>" class="img-fluid" width="200px" height="200px" alt="...">
 					</div>
 				</div>
 
-				<div class="col-6" style="border: solid 1px">
+				<div class="col-6" >
 					<h3 style="color: white;"><?= $playlist_data['playlist_title'] ?></h3>
 					<p style="color: white;"><?= $playlist_data['playlist_description'] ?></p>
 					
-					<div style="bottom:0px; position:absolute; border: solid 1px; color: white;" class="row container-fluid">
+					<div style="bottom:0px; position:absolute; color: white;" class="row container-fluid">
 
-						<div class="col-4" style="border: solid 1px; vertical-align: bottom; ">
+						<div class="col-4" style="vertical-align: bottom; ">
 							<p><?= $playlist_data['playlist_author'] ?></p>
 						</div>
 
-						<div class="col-4" style="border: solid 1px">
+						<div class="col-4">
 							<p>7 Materi</p>
 						</div>
 
-						<div class="col-4" style="border: solid 1px">
+						<div class="col-4">
 							<p><?= $playlist_data['playlist_created_time']?></p>
 						</div>
 					</div>
@@ -123,12 +86,20 @@
 	</div>
 
 	<!-- Body List-->
-	<div class="container">
-	<table class="table">
+<div class="container">
+<div class="row">
+	<div class="col-3">
+	<button type="button" class="btn btn-success" style="margin-left: 60px; margin-top:20px">
+		<a href="<?= base_url('public/dashboard/playlist/create_content') ?>" style="text-decoration: none; color: white;">Tambah Playlist</a>
+	</button>
+	</div>
+		<div class="col-6">
+<table class="table">
 <thead>
 <tr>
     <th></th>
     <th>Title</th>
+	<th>Action</th>
 </tr>
 </thead>
 <tbody>
@@ -139,12 +110,18 @@
     </td>
     <td>
         <strong><?= $content['content_title'] ?></strong><br>
+        <small class="text-muted">MDI 009</small>
+    </td>
+	<td>
+	<a href="<?= base_url('public/dashboard/content_list/'.$content['content_id'].'/content_delete') ?>" onclick="confirmToDelete(this)" class="btn btn-sm btn-outline-danger">Delete</a>
         
     </td>
 </tr>
 <?php endforeach ?>
 </tbody>
 </table>
+</div>
+</div>
 </div>
 
 

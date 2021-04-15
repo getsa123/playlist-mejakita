@@ -31,9 +31,7 @@ body {
     overflow-x: auto;
 }
 
-.playlist-container {
-    border: solid 1px;
-}
+
 
 .playlist-card {
     background-image: linear-gradient(#D2EFF7, #326E90);
