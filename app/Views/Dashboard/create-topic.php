@@ -21,34 +21,8 @@
     <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script> 
     <script src="<?php echo base_url('assets/js/popper.min.js') ?>"></script> 
     <script src="<?php echo base_url('assets/js/bootstrap.bundle.min.js') ?>"></script>
-        <!-- Navbar -->
-    <div class="container">
-        <div class="row">
-            <div class="col-12">   		
-                <nav class="navbar navbar-expand-lg navbar-light ">
-                <div class="container-fluid">
-                    <img src="<?php echo base_url('assets/img/image001.png') ?>" style="width: 150px; height: 50px; margin-left: -25px">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                    </ul>
-                    </div>
-                </div>
-                </nav>
-            </div>
-        </div>
-    </div>
+    
+    <?= $this->include('navbar') ?>
 
     <!-- sidebar -->
     <div class="sidebar">
