@@ -113,6 +113,7 @@ class Dashboard extends BaseController
                 "content_title" => $this->request->getPost('content_title'),
                 "content_category" => $this->request->getPost('content_category'),
                 "content_link" => $fileName,
+                "playlist_id" => $this->request->getPost('content_add_playlist')
                 // "slug" => $slug
             ]);
         }
