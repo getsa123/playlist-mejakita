@@ -39,18 +39,37 @@ class Dashboard extends BaseController
              return redirect()->to(base_url('public/'));
          }
 
+        $content = new ContentModel();
+        $data['content_data'] = $content->findAll();
+
         echo view('Dashboard/index', $data);
     }
     
+    public function add_content_playlist()
+    {
+        $content = new ContentModel();
+           $content->insert([
+                "playlist_id" => $this->request->getPost('insert_content'),
+            ]);
+            return redirect()->to(base_url('public/'));
+
+    }
+
     public function create_content()
     {
         session();
+
+        $playlist = new DashboardModel();
+        $data['playlist_data'] = $playlist->findAll();
+
         $content = new ContentModel();
         $data['content_data'] = $content->findAll();
         echo view('Dashboard/create-topic', $data);
     }
 
     public function save_content() {
+
+
         if (!$this->validate([
             'content_title' => [
                 'rules' => 'required|is_unique[content.content_title]',
@@ -81,6 +100,7 @@ class Dashboard extends BaseController
                 "content_title" => $this->request->getPost('content_title'),
                 "content_category" => $this->request->getPost('content_category'),
                 "content_link" => $this->request->getPost('content_link'),
+                "playlist_id" => $this->request->getPost('content_add_playlist')
                 // "slug" => $slug
             ]);
         }
@@ -140,7 +160,7 @@ class Dashboard extends BaseController
          }
 
          $content = new ContentModel();
-        $data['content_data'] = $content->findAll();
+         $data['content_data'] = $content-> where('playlist_id', $playlist_id)->findAll();
         
         echo view('Dashboard/isi-playlist', $data);
     }

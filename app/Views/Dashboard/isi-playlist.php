@@ -90,7 +90,7 @@
 <div class="row">
 	<div class="col-3">
 	<button type="button" class="btn btn-success" style="margin-left: 60px; margin-top:20px">
-		<a href="<?= base_url('public/dashboard/create_content') ?>" style="text-decoration: none; color: white;">Tambah Playlist</a>
+		<a href="<?= base_url('public/dashboard/create_content') ?>" style="text-decoration: none; color: white;">Tambah Materi</a>
 	</button>
 	</div>
 		<div class="col-6">
@@ -110,7 +110,7 @@
     </td>
     <td>
         <strong><?= $content['content_title'] ?></strong><br>
-        <small class="text-muted">MDI 009</small>
+        <small class="text-muted"><?= $content['content_author'] ?></small>
     </td>
 	<td>
 	<a href="<?= base_url('public/dashboard/content_list/'.$content['content_id'].'/content_delete') ?>" onclick="confirmToDelete(this)" class="btn btn-sm btn-outline-danger">Delete</a>

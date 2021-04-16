@@ -55,6 +55,14 @@
                         <option value="web">Link Web</option>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label for="topic">Tambah ke Playlist</label>
+                    <select class="form-control" id="topic-category" name="content_add_playlist">
+                    <?php foreach($playlist_data as $playlist): ?>
+                        <option value="<?= $playlist['playlist_id'] ?>"><?= $playlist['playlist_title'] ?></option>
+                    <?php endforeach ?>
+                    </select>
+                </div>
                 <div class="form-group" id="link-field">
                     <label for="topic-link">Masukkan Link</label>
                     <input type="text" class="form-control" name="content_link" id="topic-link" value="<?= old('content_link');?>">

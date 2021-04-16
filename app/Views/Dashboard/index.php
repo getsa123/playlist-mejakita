@@ -66,26 +66,23 @@
 </tr>
 </thead>
 <tbody>
-<?php foreach($playlist_data as $playlist): ?>
+<?php foreach($content_data as $content): ?>
 <tr>
     <td>
         <img class="listImages" src="<?php echo base_url('assets/img/gb3.png') ?>" style="width: 50px; height: 50px; border-radius: 15px">
     </td>
     <td>
-        <strong><?= $playlist['playlist_title'] ?></strong><br>
-        <small class="text-muted"><?= $playlist['playlist_author'] ?></small>
+        <strong><?= $content['content_title'] ?></strong><br>
+        <small class="text-muted">MDI 009</small>
     </td>
     <td>
-		<div class="dropdown">
-			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				Dropdown button
-			</button>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				<?php foreach($playlist_data as $playlist): ?>
-					<a href="#" class="dropdown-item" action=""><?= $playlist['playlist_title'] ?></a>
-				<?php endforeach ?>
-			</div>
-		</div>
+		<form action="add_content_playlist" method="POST">
+			<select name="myselect" id="myselect" onchange="this.form.submit()" name="insert_content">
+			<?php foreach($playlist_data as $playlist): ?>
+				<option value="<?= $playlist['playlist_id'] ?>"><?= $playlist['playlist_title'] ?></option>
+			<?php endforeach ?>
+			</select>
+		</form>
     </td>
 </tr>
 <?php endforeach ?>

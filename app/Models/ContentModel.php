@@ -10,5 +10,5 @@ class ContentModel extends Model
     protected $primaryKey = 'content_id';
 
     protected $useAutoIncrement = true;
-    protected $allowedFields = ['content_title', 'content_category', 'content_link'];
+    protected $allowedFields = ['content_title', 'content_category', 'content_link', 'content_author', 'playlist_id'];
 }
